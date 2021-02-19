@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp2-lab5-polynomial", "mp2-lab5-polynomial\mp2-lab5-polynomial.vcxproj", "{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Debug|x64.ActiveCfg = Debug|x64
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Debug|x64.Build.0 = Debug|x64
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Debug|x86.ActiveCfg = Debug|Win32
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Debug|x86.Build.0 = Debug|Win32
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Release|x64.ActiveCfg = Release|x64
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Release|x64.Build.0 = Release|x64
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Release|x86.ActiveCfg = Release|Win32
+		{03C3E590-CCB8-4646-BF07-8F7B2881E2AB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A4521D3-1FB5-4D44-8B7D-87CEF2264A08}
+	EndGlobalSection
+EndGlobal
