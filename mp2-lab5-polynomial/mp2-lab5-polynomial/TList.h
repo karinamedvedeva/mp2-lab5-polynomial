@@ -20,11 +20,17 @@ public:
 	TList();
 	~TList();
 	bool Empty(); //проверка списка на пустоту
+	T GetCurr();
+
 	void InsFirst(T elem); //добавить элемент в начало списка
 	void InsLast(T elem); //добавить элемент в конец списка
 	void InsCurr(T elem); //добавить элемент в текущую позицию списка
 	void DelFirst(); //удалить первый элемент
 	void DelCurr(); //удалить текущий элемент
+	
+	void Reset();
+	void GoNext();
+	bool IsEnd();
 
 	friend ostream& operator<<(ostream& ostr, const TList& l) //вывод
 	{
@@ -72,6 +78,23 @@ bool TList<T>::Empty() //проверка списка на пустоту
 }
 
 template <class T>
+T TList<T>::GetCurr()
+{
+	if (Empty())
+		throw 0;
+	if (pCurr = pStop)
+		throw 0;
+	pCurr = pFirst->pNext;
+	pPrev = pCurr;
+	for (int i = 0; i < pos; i++)
+	{
+		pPrev = pCurr;
+		pCurr = pCurr->pNext;
+	}
+	return pCurr->val;
+}
+
+template <class T>
 void TList<T>::InsFirst(T elem) //добавить элемент в начало списка
 {
 	TLink<T>* tmp = new TLink<T>;
@@ -90,7 +113,7 @@ void TList<T>::InsFirst(T elem) //добавить элемент в начало списка
 }
 
 template <class T>
-void TList<T>::InsLast(T elem) //добавить элемент в начало списка
+void TList<T>::InsLast(T elem) //добавить элемент в конец списка
 {
 	TLink<T>* tmp = new TLink<T>;
 	if (Empty())
@@ -109,11 +132,15 @@ template <class T>
 void TList<T>::InsCurr(T elem) //добавить элемент в текущую позицию списка
 {
 	if (pCurr == pStop)
+	{
 		InsLast(elem);
+    }
 	else
 	{
 		if (pCurr == pFirst)
+		{
 			InsFirst(elem);
+		}
 		else
 		{
 			TLink<T>* tmp = new TLink<T>;
@@ -140,19 +167,40 @@ void TList<T>::DelFirst() //удалить первый элемент
 template <class T>
 void TList<T>::DelCurr()
 {
-	if (pCurr = pStop)
+	if (Empty())
 		throw 0;
 	else
 	{
-		if (pCurr = pFirst)
+		if (pCurr == pFirst)
+		{
 			DelFirst();
+			pCurr = pFirst;
+		}
 		else
 		{
-			TLink<T>* tmp = pCurr;
 			pPrev->pNext = pCurr->pNext;
-			delete tmp;
+			delete pCurr;
 			pCurr = pPrev->pNext;
 			size--;
 		}
 	}
+}
+
+template <class T>
+void TList<T>::Reset()
+{
+	pCurr = pFirst;
+}
+
+template <class T>
+void TList<T>::GoNext()
+{
+	pPrev = pCurr;
+	pCurr = pCurr->pNext;
+}
+
+template <class T>
+bool TList<T>::IsEnd()
+{
+	return pCurr == pStop;
 }
